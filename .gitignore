@@ -4,5 +4,6 @@
 /bower_components
 /.idea
 /.src
-
+/
+.idea
 src
