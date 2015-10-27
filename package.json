@@ -1,0 +1,19 @@
+{
+  "name": "iapmobile",
+  "private": true,
+  "devDependencies": {
+    "grunt-contrib-clean": "0.6.0",
+    "grunt-contrib-copy": "0.7.0",
+    "grunt-karma": "^0.12.1",
+    "grunt-wiredep": "^2.0.0",
+    "jit-grunt": "^0.9.1",
+    "karma": "^0.13.14",
+    "karma-chrome-launcher": "0.1.7",
+    "karma-jasmine": "^0.3.6",
+    "karma-jasmine-html-reporter": "0.1.8",
+    "time-grunt": "1.0.0"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  }
+}
