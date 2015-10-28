@@ -39,7 +39,7 @@ module.exports = function (grunt) {
             dist: {
                 expand: true,
                 cwd: 'src/',
-                src: 'content.json',
+                src: '*',
                 dest: 'dist/',
                 flatten: true
             }
