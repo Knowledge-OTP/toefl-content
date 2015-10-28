@@ -75,10 +75,15 @@ module.exports = function (grunt) {
         }
     });
 
-    grunt.registerTask('test', [
-        'wiredep:test',
-        'karma:unit'
-    ]);
+    grunt.registerTask('test',function(env){
+        if(!env){
+            env = 'unit';
+        }
+        grunt.task.run([
+            'wiredep:test',
+            'karma:' + env
+        ]);
+    });
 
     grunt.registerTask('build', [
         'karma:build',
