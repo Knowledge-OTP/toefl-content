@@ -1,11 +1,9 @@
 describe('testing content', function () {
     'use strict';
 
-    var content;
-    beforeEach(function(){
-        jasmine.getFixtures().fixturesPath = "base/src/";
-        content = JSON.parse(readFixtures("content.json"));
-    });
+    jasmine.getFixtures().fixturesPath = "base/src/";
+    var content = JSON.parse(readFixtures("content.json"));
+
     var actions = {};
 
     actions.getAllEntities = function(prefix){
