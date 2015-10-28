@@ -65,7 +65,8 @@ module.exports = function (grunt) {
         // Test settings
         karma: {
             unit: {
-                configFile: 'test/karma-unit.conf.js'
+                configFile: 'test/karma-unit.conf.js',
+                browsers: ['Chrome','Phantom']
             },
             build: {
                 configFile: 'test/karma-unit.conf.js',
@@ -75,6 +76,7 @@ module.exports = function (grunt) {
     });
 
     grunt.registerTask('test', [
+        'wiredep:test',
         'karma:unit'
     ]);
 

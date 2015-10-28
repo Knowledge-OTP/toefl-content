@@ -70,4 +70,38 @@ describe('testing content', function () {
             expect(drill.questions.length).not.toBe(0);
         });
     });
+
+    it('check if all drills in timePreferenceDrill exits', function () {
+        var timePreferenceDrill = content.personalization.timePreferenceDrill;
+        for(var subjectId in timePreferenceDrill){
+            var timePreferenceDrillBySubject = timePreferenceDrill[subjectId];
+            for(var timePreference in timePreferenceDrillBySubject){
+                var drillsIds = timePreferenceDrillBySubject[timePreference];
+                drillsIds.forEach(function(drillId){
+                    var requiredDrill = content['drill' + drillId];
+                    if(!requiredDrill){
+                        console.log('drill not exists',drillId);
+                    }
+                    expect(requiredDrill).toBeDefined();
+                });
+            }
+        }
+    });
+
+    it('check if all practices in timePreferencePractice exits', function () {
+        var timePreferencePractice = content.personalization.timePreferencePractice;
+        for(var subjectId in timePreferencePractice){
+            var timePreferencePracticeBySubject = timePreferencePractice[subjectId];
+            for(var timePreference in timePreferencePracticeBySubject){
+                var PracticeSIds = timePreferencePracticeBySubject[timePreference];
+                PracticeSIds.forEach(function(practiceId){
+                    var requiredPractice= content['practice' + practiceId];
+                    if(!requiredPractice){
+                        console.log('practice not exists',practiceId, 'subjectId', subjectId, 'time', timePreference);
+                    }
+                    expect(requiredPractice).toBeDefined();
+                });
+            }
+        }
+    });
 });
