@@ -32,7 +32,7 @@ describe('testing content', function () {
     };
 
     it('check if score table exits', function () {
-        expect(content.scoreTable).toBeDefined();
+        expect(content.scoretable).toBeDefined();
     });
 
     it('check if practices exits', function () {
