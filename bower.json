@@ -11,10 +11,10 @@
     "bower_components",
     "test",
     "tests",
-    "src/content.json",
+    "src",
     "Gruntfile.js",
     "package.json",
-    "dist/media/"
+    "dist/media"
   ],
   "dependencies": {
     "jasmine-jquery": "~2.1.1"
