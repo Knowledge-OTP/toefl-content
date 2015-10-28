@@ -11,7 +11,7 @@
     "bower_components",
     "test",
     "tests",
-    "src",
+    "src/**/*",
     "Gruntfile.js",
     "package.json",
     "dist/media/**/*"
