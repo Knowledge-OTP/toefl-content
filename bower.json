@@ -13,7 +13,8 @@
     "tests",
     "src",
     "Gruntfile.js",
-    "package.json"
+    "package.json",
+    "dist/media"
   ],
   "dependencies": {
     "jasmine-jquery": "~2.1.1"
