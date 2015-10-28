@@ -15,6 +15,10 @@ module.exports = function (config) {
         // base path, that will be used to resolve files and exclude
         basePath: '../',
 
+        client: {
+            captureConsole: false,
+        },
+
         // testing framework to use (jasmine/mocha/qunit/...)
         frameworks: ['jasmine', 'es5-shim'],
 
