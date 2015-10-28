@@ -65,7 +65,8 @@ module.exports = function (grunt) {
         // Test settings
         karma: {
             unit: {
-                configFile: 'test/karma-unit.conf.js'
+                configFile: 'test/karma-unit.conf.js',
+                browsers: ['Chrome','Phantom']
             },
             build: {
                 configFile: 'test/karma-unit.conf.js',
@@ -145,9 +146,15 @@ module.exports = function (grunt) {
 
     grunt.registerTask('assaf', 'jasmine_nodejs:app');
 
-    grunt.registerTask('test', [
-        'karma:unit'
-    ]);
+    grunt.registerTask('test',function(env){
+        if(!env){
+            env = 'unit';
+        }
+        grunt.task.run([
+            'wiredep:test',
+            'karma:' + env
+        ]);
+    });
 
     grunt.registerTask('build', [
         'karma:build',

@@ -20,6 +20,9 @@ module.exports = function (config) {
 
         // list of files / patterns to load in the browser
         files: [
+            //cross browser support
+            'test/crossBrowser/string.js',
+
             // bower:js
             'bower_components/jquery/dist/jquery.js',
             'bower_components/jasmine/lib/jasmine-core/jasmine.js',
