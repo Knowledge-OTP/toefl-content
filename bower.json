@@ -5,6 +5,10 @@
     "Zinkerz"
   ],
   "license": "MIT",
+  "main":[
+    "dist/content.json",
+    "dist/content.db"
+  ],
   "ignore": [
     "**/.*",
     "node_modules",
