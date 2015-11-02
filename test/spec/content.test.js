@@ -33,6 +33,10 @@ describe('testing content', function () {
         expect(content.scoretable).toBeDefined();
     });
 
+    it('check if exam order exits in personalization object', function () {
+        expect(content.personalization.examOrder).toBeDefined();
+    });
+
     it('check if practices exits', function () {
         expect(actions.getAllEntities('practice').length).not.toBe(0);
     });
