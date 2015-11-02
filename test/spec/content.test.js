@@ -33,6 +33,13 @@ describe('testing content', function () {
         expect(content.scoretable).toBeDefined();
     });
 
+    it('check if score table enums exist', function () {
+        expect(content.scoretable.reading).toBeDefined();
+        expect(content.scoretable.writing).toBeDefined();
+        expect(content.scoretable.listening).toBeDefined();
+        expect(content.scoretable.speaking).toBeDefined();
+    });
+
     it('check if exam order exits in personalization object', function () {
         expect(content.personalization.examOrder).toBeDefined();
     });
