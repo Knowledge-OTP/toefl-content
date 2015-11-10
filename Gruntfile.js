@@ -39,9 +39,9 @@ module.exports = function (grunt) {
             dist: {
                 expand: true,
                 cwd: 'src/',
-                src: '*',
+                src: '**/*.*',
                 dest: 'dist/',
-                flatten: true
+                // flatten: true
             }
         },
         wiredep: {
