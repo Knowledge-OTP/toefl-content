@@ -72,6 +72,11 @@ module.exports = function (grunt) {
                 configFile: 'test/karma-unit.conf.js',
                 singleRun: true
             }
+        },
+        jsonlint: {
+            sample: {
+                src: [ 'dist/content.json' ]
+            }
         }
     });
 
@@ -86,6 +91,7 @@ module.exports = function (grunt) {
     });
 
     grunt.registerTask('build', [
+        'jsonlint',
         'karma:build',
         'clean:dist',
         'copy:dist'
