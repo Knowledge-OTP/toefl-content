@@ -115,4 +115,58 @@ describe('testing content', function () {
             }
         }
     });
+
+    it('check if all multi select answer questions in practice exercise has correct answers ids', function () {
+        var practices = actions.getAllEntities('practice');
+        practices.forEach(function(practice){
+            practice.questions.forEach(function(question){
+                if(question.answerTypeId === 0){
+                    var answersArr = question.answers.map(function(answer){
+                        return answer.id;
+                    });
+                    if(answersArr.indexOf(question.correctAnswerId) === -1 || answersArr.indexOf(0) !== -1){
+                        console.log('multi choice question in practice exercise has bad answers ids',practice.id,question.id);
+                    }
+                    expect(answersArr).toEqual(jasmine.arrayContaining([question.correctAnswerId]));
+                    expect(answersArr).not.toEqual(jasmine.arrayContaining([0]));
+                }
+            });
+        });
+    });
+
+    it('check if all multi select answer questions in drill exercise has correct answers ids', function () {
+        var drills = actions.getAllEntities('drill');
+        drills.forEach(function(drill){
+            drill.questions.forEach(function(question){
+                if(question.answerTypeId === 0){
+                    var answersArr = question.answers.map(function(answer){
+                        return answer.id;
+                    });
+                    if(answersArr.indexOf(question.correctAnswerId) === -1 || answersArr.indexOf(0) !== -1){
+                        console.log('multi choice question in drill exercise has bad answers ids',drill.id,question.id);
+                    }
+                    expect(answersArr).toEqual(jasmine.arrayContaining([question.correctAnswerId]));
+                    expect(answersArr).not.toEqual(jasmine.arrayContaining([0]));
+                }
+            });
+        });
+    });
+
+    it('check if all multi select answer questions in section exercise has correct answers ids', function () {
+        var sections = actions.getAllEntities('section');
+        sections.forEach(function(section){
+            section.questions.forEach(function(question){
+                if(question.answerTypeId === 0){
+                    var answersArr = question.answers.map(function(answer){
+                        return answer.id;
+                    });
+                    if(answersArr.indexOf(question.correctAnswerId) === -1 || answersArr.indexOf(0) !== -1){
+                        console.log('multi choice question in exam exercise has bad answers ids',section.id,question.id);
+                    }
+                    expect(answersArr).toEqual(jasmine.arrayContaining([question.correctAnswerId]));
+                    expect(answersArr).not.toEqual(jasmine.arrayContaining([0]));
+                }
+            });
+        });
+    });
 });
