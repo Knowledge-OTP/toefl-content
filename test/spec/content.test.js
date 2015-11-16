@@ -169,4 +169,36 @@ describe('testing content', function () {
             });
         });
     });
+
+    it('check if all drills exercise are mapped in personalization time preference drill object', function () {
+        var timePreferenceDrill = content.personalization.timePreferenceDrill;
+        var drillNumInPersonaliztion = 0;
+        var keys = Object.keys(timePreferenceDrill);
+        keys.forEach(function(subjectId){
+            var drillsForSubject = timePreferenceDrill[subjectId];
+            var timeKeys = Object.keys(drillsForSubject);
+            timeKeys.forEach(function(timeKey){
+                var idsArr = drillsForSubject[timeKey];
+                drillNumInPersonaliztion += idsArr.length;
+            })
+        });
+        var drillsNum = actions.getAllEntities('drill').length;
+        expect(drillNumInPersonaliztion).toBe(drillsNum);
+    });
+
+    it('check if all practices are mapped in personalization time preference exercise object', function(){
+       var timePreferencePractice = content.personalization.timePreferencePractice;
+       var practiceNumInPersonalization = 0;
+       var keys = Object.keys(timePreferencePractice);
+       keys.forEach(function(subjectId){
+           var practiceForSubject = timePreferencePractice[subjectId];
+           var timeKeys = Object.keys(practiceForSubject);
+           timeKeys.forEach(function(timeKey){
+               var idsArr = practiceForSubject[timeKey];
+               practiceNumInPersonalization += idsArr.length;
+           })
+       });
+        var practiceSum = actions.getAllEntities('practice').length;
+        expect(practiceNumInPersonalization).toBe(practiceSum);
+    });
 });
